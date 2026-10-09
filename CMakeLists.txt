@@ -129,18 +129,9 @@ set_property(GLOBAL PROPERTY OS_FOLDERS ON)
 # CEF configuration.
 #
 
-# Specify the CEF branch
-if(NOT DEFINED CEF_BRANCH)
-  set(CEF_BRANCH "5845")
-endif()
-
 # Specify the CEF distribution version.
 if(NOT DEFINED CEF_VERSION)
-<<<<<<< HEAD
   set(CEF_VERSION "152.0.6+g708dc14+chromium-152.0.7977.83")
-=======
-  set(CEF_VERSION "116.0.27+gd8c85ac+chromium-116.0.5845.190")
->>>>>>> cinemamod/master
 endif()
 
 # Determine the platform.
@@ -175,7 +166,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # Download and extract the CEF binary distribution (executes DownloadCEF.cmake).
 include(DownloadCEF)
-DownloadCEF("${CEF_PLATFORM}" "${CEF_BRANCH}" "${CEF_VERSION}" "${CMAKE_SOURCE_DIR}/third_party/cef")
+DownloadCEF("${CEF_PLATFORM}" "${CEF_VERSION}" "${CMAKE_SOURCE_DIR}/third_party/cef")
 
 # Add the CEF binary distribution's cmake/ directory to the module path.
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CEF_ROOT}/cmake")
