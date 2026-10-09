@@ -254,7 +254,7 @@ execute_process(
   RESULT_VARIABLE EXECUTE_RV
   )
 if(NOT EXECUTE_RV STREQUAL "0")
-  message(FATAL_ERROR "Execution failed with unexpected result: ${EXECUTE_RV}")
+  message(WARNING "clang-format download failed (${EXECUTE_RV}); formatting tools won't work")
 endif()
 
 # Copy the CEF README.txt file to the cmake build directory for use by the
@@ -294,7 +294,7 @@ execute_process(
   RESULT_VARIABLE EXECUTE_RV
   )
 if(NOT EXECUTE_RV STREQUAL "0")
-  message(FATAL_ERROR "Execution failed with unexpected result: ${EXECUTE_RV}")
+  message(WARNING "clang-format download failed (${EXECUTE_RV}); formatting tools will not work")
 endif()
 
 
