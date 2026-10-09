@@ -91,6 +91,15 @@ public class CefBrowserOsr extends CefBrowser_N implements CefRenderHandler {
     }
 
     @Override
+    public void addOnPaintListener(java.util.function.Consumer<CefPaintEvent> listener) {}
+
+    @Override
+    public void setOnPaintListener(java.util.function.Consumer<CefPaintEvent> listener) {}
+
+    @Override
+    public void removeOnPaintListener(java.util.function.Consumer<CefPaintEvent> listener) {}
+
+    @Override
     public boolean onCursorChange(CefBrowser browser, final int cursorType) {
         return true;
     }
