@@ -30,7 +30,6 @@
       <compilerarg value="-XDignore.symbol.file"/>
       <classpath location="${jdk7.path}/jre/lib/rt.jar" />
       <classpath refid="class.path"/>
-      <src path="java/tests/"/>
       <src path="java/org/cef/"/>
     </javac>
     <copy todir="${out.path}">
