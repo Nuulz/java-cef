@@ -107,6 +107,16 @@ CefSettings GetJNISettings(JNIEnv* env, jobject obj) {
     CefString(&settings.locales_dir_path) = tmp;
     tmp.clear();
   }
+  if (GetJNIFieldString(env, cls, obj, "framework_dir_path", &tmp) &&
+      !tmp.empty()) {
+    CefString(&settings.framework_dir_path) = tmp;
+    tmp.clear();
+  }
+  if (GetJNIFieldString(env, cls, obj, "main_bundle_path", &tmp) &&
+      !tmp.empty()) {
+    CefString(&settings.main_bundle_path) = tmp;
+    tmp.clear();
+  }
   GetJNIFieldInt(env, cls, obj, "remote_debugging_port",
                  &settings.remote_debugging_port);
   if (GetJNIFieldString(env, cls, obj, "chrome_policy_id", &tmp) &&

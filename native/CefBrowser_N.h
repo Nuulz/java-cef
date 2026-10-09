@@ -22,7 +22,6 @@ Java_org_cef_browser_CefBrowser_1N_N_1CreateBrowser(JNIEnv*,
                                                     jboolean,
                                                     jboolean,
                                                     jobject,
-                                                    jobject,
                                                     jobject);
 
 /*
@@ -39,7 +38,6 @@ Java_org_cef_browser_CefBrowser_1N_N_1CreateDevTools(JNIEnv*,
                                                      jlong,
                                                      jboolean,
                                                      jboolean,
-                                                     jobject,
                                                      jobject);
 
 /*
@@ -527,16 +525,6 @@ JNIEXPORT void JNICALL Java_org_cef_browser_CefBrowser_1N_N_1UpdateUI(JNIEnv*,
                                                                       jobject,
                                                                       jobject,
                                                                       jobject);
-
-/*
- * Class:     org_cef_browser_CefBrowser_N
- * Method:    N_SetParent
- * Signature: (JLjava/awt/Component;)V
- */
-JNIEXPORT void JNICALL Java_org_cef_browser_CefBrowser_1N_N_1SetParent(JNIEnv*,
-                                                                       jobject,
-                                                                       jlong,
-                                                                       jobject);
 
 /*
  * Class:     org_cef_browser_CefBrowser_N

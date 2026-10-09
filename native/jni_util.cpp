@@ -4,7 +4,6 @@
 
 #include "jni_util.h"
 
-#include <jawt.h>
 #include <algorithm>
 
 #include "jni_scoped_helpers.h"
@@ -1276,6 +1275,20 @@ bool GetJNIFieldStaticInt(JNIEnv* env,
   return false;
 }
 
+bool CallStaticJNIMethodII_V(JNIEnv* env,
+                      jclass cls,
+                      const char* method_name,
+                      int* value,
+                      int arg) {
+  jmethodID methodID = env->GetStaticMethodID(cls, method_name, "(I)I");
+  if (methodID) {
+    *value = env->CallStaticIntMethod(cls, methodID, arg);
+    return true;
+  }
+  env->ExceptionClear();
+  return false;
+}
+
 bool CallJNIMethodI_V(JNIEnv* env,
                       jclass cls,
                       jobject obj,
@@ -1298,6 +1311,20 @@ bool CallJNIMethodC_V(JNIEnv* env,
   jmethodID methodID = env->GetMethodID(cls, method_name, "()C");
   if (methodID) {
     *value = env->CallCharMethod(obj, methodID);
+    return true;
+  }
+  env->ExceptionClear();
+  return false;
+}
+
+bool CallJNIMethodD_V(JNIEnv* env,
+                      jclass cls,
+                      jobject obj,
+                      const char* method_name,
+                      double* value) {
+  jmethodID methodID = env->GetMethodID(cls, method_name, "()D");
+  if (methodID) {
+    *value = env->CallDoubleMethod(obj, methodID);
     return true;
   }
   env->ExceptionClear();

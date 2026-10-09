@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 The Java Chromium Embedded Framework (JCEF) is a simple framework for embedding Chromium-based browsers in other applications using the Java programming language.
 
 # Quick Links
@@ -53,3 +54,7 @@ If you would like to contribute source code changes to JCEF please follow the be
 * Follow the style of existing JCEF source files. In general JCEF uses the [Chromium coding style](http://www.chromium.org/developers/coding-style).
 * Include new or modified unit tests as appropriate to the functionality.
 * Not include unnecessary or unrelated changes.
+=======
+# MCEF java-cef
+Modified version of java-cef for use with MCEF
+>>>>>>> cinemamod/master
